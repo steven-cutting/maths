@@ -1,0 +1,6 @@
+# Compiled source #
+##################
+*.pyc
+*.log
+*.sql
+*.sqlite
