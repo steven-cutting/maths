@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from pie import wallis2 as w
+import arrow
 
+t1 = arrow.now()
 
 # print w(9)
 # print w(77)
@@ -11,6 +13,10 @@ from pie import wallis2 as w
 # print w(7750573)
 # print w(99999999)
 # print w(78365986)
-# print w(100000000)
-print w(999999999)
+print w(100000000)
+# print w(999999999)
 # print w(768956982)
+
+t2 = arrow.now()
+
+print "Stopwatch: {}".format(t2 - t1)
