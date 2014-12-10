@@ -1,43 +1,70 @@
 from __future__ import division
-from itertools import islice, count, izip
-from math import sqrt
 import math
 import cmath
 import sys
+from decimal import Decimal
+from itertools import islice, count, izip, imap, product, chain
 
-
-# pi = ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0))*pi
-# pi = ((4.0*(  a   ))/((4.0*(  a   ))-1.0))*pi
-# pi = ((     b      )/((     b      )-1.0))*pi
-# pi = (      b       /          c         )*pi
-# pi = (              d                    )*pi
-
+# The basic equation:
+# pi = ((4 * (i**2))/((4 * (i**2)) - 1)) * pi
+# pi = ((4 *    a  )/((4 *   a   ) - 1)) * pi
+# pi = (      b     /(      b      - 1)) * pi
+# pi = (      b     /          c       ) * pi
+# pi =              d                    * pi
+# a = i**2
+# b = 4 * a
+# c = b - 1
+# d = b / c
+# pi = d * pi
 
 
 def wallis_equation(i):
+    # This replaces this: ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0)) * pie
+    # Reduces redundant operations.
     a = i**2
     b = 4*a
-    c =
-    d
+    c = b - 1
+    return b / c
+
+
+def genmill(stop, start=0):
+    # exclusive
+    end = stop - start
+    return islice(count(start), 0, end)
+
+
+def wallis(stop, start=0, pie=1):
+    pi = pie
+    end = stop - start
+    for v in imap(wallis_equation, islice(count(start + 1), 0, end)):
+        p = pi
+        pi = v * p
+    return pi * 2
+
+
+def wallisgen(stop, start=0, pie=1):
+    pi = pie
+    end = stop - start
+    for i in islice(count(start + 1), 0, end):
+        v = wallis_equation(i)
+        p = pi
+        pi = v * p
+    return pi * 2
+# think about implementing product() form itertools.
+# If I split up large values of i into multiple iterables use chain() form itertools.
 
 
 
-    ((4.0*(i**2.0))
-    /((4.0*(i**2.0))-1.0))
 
 
-
-
-
-
-
-
-
-
+# ------------------------------------------------------------------------------
+# **Depreciated**
+# This code is from when I first stared learning python, so it is very bad.
+# Only here for comparison.
 
 def P_Pie(base, amount, pies):
 	# terst = 0
-	for i in range(base, amount+1):
+	for i in xrange(base, amount+1):
 		pies = ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0))*pies
 		# terst += 1
 	# print "------"
@@ -46,7 +73,7 @@ def P_Pie(base, amount, pies):
 	return pies
 
 
-def wallis(num):
+def wallisold(num):
 	pie = 1.0
 	for i in islice(count(1), int(num)):
 		pie = ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0))*pie

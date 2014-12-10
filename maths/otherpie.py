@@ -7,14 +7,14 @@ def make_pi():
         else:
             q, r, t, k, m, x = q*k, (2*q+r)*x, t*x, k+1, (q*(7*k+2)+r*x)//(t*x), x+2
 
+def cal_pi():
+    digits = make_pi()
+    pi_list = []
+    my_array = []
 
-digits = make_pi()
-pi_list = []
-my_array = []
+    for i in make_pi():
+        my_array.append(str(i))
 
-for i in make_pi():
-    my_array.append(str(i))
-
-my_array = my_array[:1] + ['.'] + my_array[1:]
-big_string = "".join(my_array)
-print "here is a big string:\n %s" % big_string
+    my_array = my_array[:1] + ['.'] + my_array[1:]
+    big_string = "".join(my_array)
+    print "here is a big string:\n %s" % big_string
