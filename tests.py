@@ -24,6 +24,7 @@ g = maths.genmill(start=20, stop=25)
 for i in g:
     print i
 """
+"""
 pistr = '3.141592653589793115997963468544'
 pi = 3.141592653589793115997963468544
 
@@ -33,22 +34,26 @@ print 'decimal:\n',Decimal(math.pi)
 print 'mathpi:\n%.48f' % math.pi
 
 print '\n\n'
+"""
+i = str(sys.argv[1])
 
-t1 = arrow.now()
+t1 = arrow.now(i)
+print 'std:'
 print Decimal(maths.wallis(10000000))
-t2 = arrow.now()
+t2 = arrow.now(i)
 print t2 - t1
 print 'gen:'
 print Decimal(maths.wallisgen(10000000))
-t3 = arrow.now()
+t3 = arrow.now(i)
 print t3 - t2
-t1 = arrow.now()
-print Decimal(maths.wallis(10000000))
-t2 = arrow.now()
-print t2 - t1
+t1 = arrow.now(i)
 print 'gen:'
 print Decimal(maths.wallisgen(10000000))
-t3 = arrow.now()
+t2 = arrow.now(i)
+print t2 - t1
+print "std:"
+print Decimal(maths.wallis(10000000))
+t3 = arrow.now(i)
 print t3 - t2
 
 
