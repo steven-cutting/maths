@@ -35,7 +35,7 @@ print 'mathpi:\n%.48f' % math.pi
 
 print '\n\n'
 """
-i = str(sys.argv[1])
+i = int(sys.argv[1])
 
 t1 = arrow.now()
 print 'std:'
