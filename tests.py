@@ -37,23 +37,23 @@ print '\n\n'
 """
 i = str(sys.argv[1])
 
-t1 = arrow.now(i)
+t1 = arrow.now()
 print 'std:'
-print Decimal(maths.wallis(10000000))
-t2 = arrow.now(i)
+print Decimal(maths.wallis(i))
+t2 = arrow.now()
 print t2 - t1
 print 'gen:'
-print Decimal(maths.wallisgen(10000000))
-t3 = arrow.now(i)
+print Decimal(maths.wallisgen(i))
+t3 = arrow.now()
 print t3 - t2
-t1 = arrow.now(i)
+t1 = arrow.now()
 print 'gen:'
-print Decimal(maths.wallisgen(10000000))
-t2 = arrow.now(i)
+print Decimal(maths.wallisgen(i))
+t2 = arrow.now()
 print t2 - t1
 print "std:"
-print Decimal(maths.wallis(10000000))
-t3 = arrow.now(i)
+print Decimal(maths.wallis(i))
+t3 = arrow.now()
 print t3 - t2
 
 
