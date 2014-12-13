@@ -19,7 +19,7 @@ from itertools import islice, count, izip, imap, product, chain
 
 
 def wallis_equation(i):
-    # This replaces this: ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0)) * pie
+    # This replaces this: ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0))
     # Reduces redundant operations.
     a = i**2
     b = 4*a
