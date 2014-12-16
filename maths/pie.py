@@ -27,19 +27,18 @@ def wallis_equation(i):
     return b / c
 
 
-def genmill(stop, start=0):
-    # exclusive
-    end = stop - start
-    return islice(count(start), 0, end)
-
-
 def wallis(stop, start=0, pie=1):
     pi = pie
     end = stop - start
-    for v in imap(wallis_equation, islice(count(start + 1), 0, end)):
-        p = pi
-        pi = v * p
-    return pi * 2
+    iteration = 0
+    try:
+        for i,v in enumerate(imap(wallis_equation, islice(count(start + 1), 0, end))):
+            p = pi
+            pi = v * p
+            iteration = i
+    except KeyboardInterrupt:
+        return pi * 2, iteration
+    return pi * 2, iteration
 
 
 def wallisgen(stop, start=0, pie=1):
@@ -54,7 +53,10 @@ def wallisgen(stop, start=0, pie=1):
 # If I split up large values of i into multiple iterables use chain() form itertools.
 
 
-
+def genmill(stop, start=0):
+    # exclusive
+    end = stop - start
+    return islice(count(start), 0, end)
 
 
 # ------------------------------------------------------------------------------

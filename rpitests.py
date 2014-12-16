@@ -47,8 +47,10 @@ if __name__ == "__main__":
 
     if arg == 'std':
         print 'std:'
-        print Decimal(maths.wallis(i))
+        pie, i = maths.wallis(i)
+        print "\ni = {}\npi = {}".format(i, Decimal(pie))
     elif arg == 'gen':
         print 'gen:'
-        print Decimal(maths.wallisgen(i))
+        pie, i = maths.wallisgen(i)
+        print "\ni = {}\npi = {}".format(i, Decimal(pie))
 
