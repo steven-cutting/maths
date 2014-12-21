@@ -1,3 +1,10 @@
+__title__ = 'maths'
+__license__ = 'MIT'
+__author__ = 'Steven Cutting'
+__author_email__ = 'steven.c.projects@gmail.com'
+__created_on__ = '12/3/2014'
+
+
 def make_pi():
     q, r, t, k, m, x = 1, 0, 1, 1, 3, 3
     for j in range(1000):

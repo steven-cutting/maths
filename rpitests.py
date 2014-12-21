@@ -1,19 +1,21 @@
-from __future__ import division
-import math
-import cmath
-import sys
-from decimal import Decimal
+__title__ = 'maths'
+__license__ = 'MIT'
+__author__ = 'Steven Cutting'
+__author_email__ = 'steven.c.projects@gmail.com'
+__created_on__ = '12/3/2014'
 
-
-import maths
-import tests.wallis.wallistests as wtests
-
-
-
-
-#print maths.wallis(1)
 
 if __name__ == "__main__":
+    from __future__ import division
+    import math
+    import cmath
+    import sys
+    from decimal import Decimal
+
+
+    import maths
+    import tests.wallis.wallistests as wtests
+
     print sys.argv
 
     """
