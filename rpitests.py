@@ -1,3 +1,5 @@
+from __future__ import division
+
 __title__ = 'maths'
 __license__ = 'MIT'
 __author__ = 'Steven Cutting'
@@ -5,8 +7,9 @@ __author_email__ = 'steven.c.projects@gmail.com'
 __created_on__ = '12/3/2014'
 
 
+
 if __name__ == "__main__":
-    from __future__ import division
+
     import math
     import cmath
     import sys
@@ -14,7 +17,7 @@ if __name__ == "__main__":
 
 
     import maths
-    import tests.wallis.wallistests as wtests
+    import maths.tests.wallis.wallistests as wtests
 
     import logging
     _LOG = logging.getLogger(__name__)

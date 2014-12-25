@@ -1,3 +1,9 @@
+__title__ = 'maths'
+__license__ = 'MIT'
+__author__ = 'Steven Cutting'
+__author_email__ = 'steven.c.projects@gmail.com'
+__created_on__ = '12/25/2014'
+
 
 import time
 import pandas as pd

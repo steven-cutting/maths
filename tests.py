@@ -5,9 +5,6 @@ __author_email__ = 'steven.c.projects@gmail.com'
 __created_on__ = '12/3/2014'
 
 
-
-
-
 #print maths.wallis(1)
 
 if __name__ == "__main__":
