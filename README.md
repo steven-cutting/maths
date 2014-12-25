@@ -1,0 +1,1 @@
+[The Wallis Equationn](http://mathworld.wolfram.com/WallisFormula.html)

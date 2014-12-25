@@ -2,6 +2,10 @@
 import time
 import pandas as pd
 
+import logging
+_LOG = logging.getLogger(__name__)
+
+
 class Timer:
     def __init__(self):
         self.interval = 0

@@ -12,6 +12,10 @@ import sys
 from decimal import Decimal
 from itertools import islice, count, izip, imap, product, chain
 
+
+import logging
+_LOG = logging.getLogger(__name__)
+
 # The basic equation:
 # pi = ((4 * (i**2))/((4 * (i**2)) - 1)) * pi
 # pi = ((4 *    a  )/((4 *   a   ) - 1)) * pi
@@ -26,6 +30,7 @@ from itertools import islice, count, izip, imap, product, chain
 
 
 def wallis_equation(i):
+    print '-', i, '--',
     # This replaces this: ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0))
     # Reduces redundant operations.
     a = i**2
@@ -34,12 +39,13 @@ def wallis_equation(i):
     return b / c
 
 
-def wallis(stop, start=0, pie=1):
+def wallis(stop, start=0, pie=1, step=1):
     pi = pie
-    end = stop - start
+    end = stop - start + 1
     iteration = 0
     try:
-        for i,v in enumerate(imap(wallis_equation, islice(count(start + 1), 0, end))):
+        for i,v in enumerate(imap(wallis_equation, islice(count(start + 1), 0, end, step))):
+            print i
             p = pi
             pi = v * p
             iteration = i

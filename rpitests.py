@@ -16,6 +16,10 @@ if __name__ == "__main__":
     import maths
     import tests.wallis.wallistests as wtests
 
+    import logging
+    _LOG = logging.getLogger(__name__)
+
+
     print sys.argv
 
     i = int(sys.argv[2])
