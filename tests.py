@@ -1,3 +1,4 @@
+from __future__ import division
 __title__ = 'maths'
 __license__ = 'MIT'
 __author__ = 'Steven Cutting'
@@ -8,7 +9,7 @@ __created_on__ = '12/3/2014'
 #print maths.wallis(1)
 
 if __name__ == "__main__":
-    from __future__ import division
+
     import math
     import cmath
     import sys

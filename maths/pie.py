@@ -28,7 +28,6 @@ _LOG = logging.getLogger(__name__)
 # d = b / c
 # pi = d * pi
 
-
 def wallis_equation(i):
     # This replaces this: ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0))
     # Reduces redundant operations.
@@ -62,13 +61,9 @@ def wallis_parallel(kwargs):
     pi = 1
     end = stop - start + 1
     iteration = 0
-    try:
-        for i,v in enumerate(imap(wallis_equation, islice(count(start), 0, end, step))):
-            p = pi
-            pi = v * p
-            iteration = i
-    except KeyboardInterrupt:
-        return pi
+    for i,v in enumerate(imap(wallis_equation, islice(count(start), 0, end, step))):
+        p = pi
+        pi = v * p
     return pi
 
 

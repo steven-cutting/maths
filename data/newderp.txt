@@ -1,0 +1,202 @@
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 100000
+['multicore.py', '4', '100000']
+3.14158479966
+0:00:00.032086
+
+real	0m0.185s
+user	0m0.137s
+sys	0m0.013s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 10000000
+['multicore.py', '4', '10000000']
+3.14159257499
+0:00:01.317966
+
+real	0m1.485s
+user	0m5.187s
+sys	0m0.007s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 10000000
+['multicore.py', '4', '10000000']
+3.14159257499
+0:00:01.312512
+
+real	0m1.386s
+user	0m5.167s
+sys	0m0.003s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 100000000
+['multicore.py', '4', '100000000']
+3.14159263687
+0:00:15.534463
+
+real	0m15.702s
+user	1m1.367s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python rpitests.py std 100000000
+['rpitests.py', 'std', '100000000']
+std:
+
+i = 100000000
+pi = 3.141592643066262180440162410377524793148040771484375
+0:00:54.574562
+
+real	0m54.642s
+user	0m54.637s
+sys	0m0.003s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 3 100000000
+['multicore.py', '3', '100000000']
+3.14159263644
+0:00:20.059015
+
+real	0m20.229s
+user	1m0.163s
+sys	0m0.020s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 2 100000000
+['multicore.py', '2', '100000000']
+3.1415926361
+0:00:28.936190
+
+real	0m29.022s
+user	0m57.920s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 1 100000000
+['multicore.py', '1', '100000000']
+3.14159264307
+0:00:54.135080
+
+real	0m54.252s
+user	0m54.213s
+sys	0m0.007s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 100000000
+['multicore.py', '4', '100000000']
+3.1415926368663509293810420786030590534210205078125
+0:00:15.788222
+
+real	0m15.908s
+user	1m1.950s
+sys	0m0.007s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 100000
+['multicore.py', '4', '100000']
+3.1415847996571795164300056057982146739959716796875
+0:00:00.033207
+
+real	0m0.191s
+user	0m0.140s
+sys	0m0.017s
+[steven_c@archlinuxdesktop maths]$ time command | python rpitests.py std 100000
+['rpitests.py', 'std', '100000']
+std:
+
+i = 100000
+pi = 3.1415847996572470179899028153158724308013916015625
+0:00:00.065569
+
+real	0m0.132s
+user	0m0.120s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 100000
+['multicore.py', '4', '100000']
+3.1415847996571795164300056057982146739959716796875
+0:00:00.033599
+
+real	0m0.188s
+user	0m0.140s
+sys	0m0.013s
+[steven_c@archlinuxdesktop maths]$ time command | python rpitests.py std 100000
+['rpitests.py', 'std', '100000']
+std:
+
+i = 100000
+pi = 3.1415847996572470179899028153158724308013916015625
+0:00:00.065882
+
+real	0m0.133s
+user	0m0.120s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 1 100000
+['multicore.py', '1', '100000']
+3.1415847996572470179899028153158724308013916015625
+0:00:00.086129
+
+real	0m0.188s
+user	0m0.153s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python rpitests.py std 100000
+['rpitests.py', 'std', '100000']
+std:
+
+i = 100000
+pi = 3.1415847996572470179899028153158724308013916015625
+0:00:00.066918
+
+real	0m0.135s
+user	0m0.127s
+sys	0m0.007s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 1 100000
+['multicore.py', '1', '100000']
+3.1415847996572470179899028153158724308013916015625
+0:00:00.076318
+
+real	0m0.186s
+user	0m0.137s
+sys	0m0.013s
+[steven_c@archlinuxdesktop maths]$ time command | python rpitests.py std 100000
+['rpitests.py', 'std', '100000']
+std:
+
+i = 100000
+pi = 3.1415847996572470179899028153158724308013916015625
+0:00:00.067209
+
+real	0m0.135s
+user	0m0.127s
+sys	0m0.007s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 1 100000
+['multicore.py', '1', '100000']
+3.1415847996572470179899028153158724308013916015625
+0:00:00.073837
+
+real	0m0.182s
+user	0m0.123s
+sys	0m0.020s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 2 100000
+['multicore.py', '2', '100000']
+3.141584799657235915759656563750468194484710693359375
+0:00:00.043412
+
+real	0m0.188s
+user	0m0.133s
+sys	0m0.013s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 3 100000
+['multicore.py', '3', '100000']
+3.141584799657348270329748629592359066009521484375
+0:00:00.033013
+
+real	0m0.180s
+user	0m0.130s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python rpitests.py std 10000000
+['rpitests.py', 'std', '10000000']
+std:
+
+i = 10000000
+pi = 3.141592575080853322333496180362999439239501953125
+0:00:04.633660
+
+real	0m4.696s
+user	0m4.683s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 10000000
+['multicore.py', '4', '10000000']
+3.141592574990816455482445235247723758220672607421875
+0:00:01.208805
+
+real	0m1.289s
+user	0m4.723s
+sys	0m0.010s
+[steven_c@archlinuxdesktop maths]$ time command | python multicore.py 4 100000000000
+['multicore.py', '4', '100000000000']
+3.1415926368663509293810420786030590534210205078125
+13:33:31.498313
+
+real	813m31.655s
+user	3228m41.111s
+sys	0m3.293s
