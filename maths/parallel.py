@@ -36,7 +36,7 @@ def para_wallis(i, cores=1):
     #    maths.wallis_parallel(karg)
 
     pool = Pool(processes=cores)
-    results = pool.map(maths.wallis_parallel, tuple(kargs_to_map))
+    results = pool.map(maths.wallis_parallel, kargs_to_map)
 
     product = reduce(mul, results, 1)
 
