@@ -1,7 +1,7 @@
 ## Maths
 
 This is just a module for 'toy problems'. 
-I using different mathematical formulas/equations/etc. to practice and
+I'm using different mathematical formulas/equations/etc. to practice and
 demonstrate various features in python.
 
 [**The Wallis Equation**](http://www.pi314.net/eng/wallis.php)
