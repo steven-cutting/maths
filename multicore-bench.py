@@ -3,15 +3,17 @@ __title__ = 'maths'
 __license__ = 'MIT'
 __author__ = 'Steven Cutting'
 __author_email__ = 'steven.c.projects@gmail.com'
-__created_on__ = '12/25/2014'
+__created_on__ = '12/28/2014'
 
 
 if __name__ == "__main__":
+    from timeit import Timer, timeit, repeat
 
     import math
     import cmath
     import sys
     import platform
+
     from decimal import Decimal
 
     import maths
@@ -19,7 +21,7 @@ if __name__ == "__main__":
     from maths import generalfunctions as gfunc
 
     import logging
-    logging.basicConfig(filename='data/logs/mulicore.log', level=logging.INFO)
+    logging.basicConfig(filename='data/logs/mulicore-bench.log', level=logging.INFO)
     LOG = logging.getLogger(__name__)
 
     prossesors_list = gfunc.cpu_info()
@@ -37,10 +39,15 @@ if __name__ == "__main__":
             'number' : 3,
             }
 
-    with gfunc.Timer() as timer_:
-        final_pi = maths.para_wallis(info['i'], info['cores_used'])
 
-    info['pi'] = Decimal(final_pi)
+    cmd_str = "maths.para_wallis({i}, {cores_used})".format(**info)
+
+    with gfunc.Timer() as timer_:
+        Repeat = repeat(cmd_str,
+                        setup="import maths",
+                        repeat=info['repeat'],
+                        number=info['number'])
+    info['avg_time'] = sum(Repeat) / float(len(Repeat))
     info['runtime'] = timer_.interval
 
     logger_str1 = """script
@@ -51,13 +58,12 @@ if __name__ == "__main__":
         implementation
         cores_used
         i
-        pi
+        repeat
+        number
+        avg_time
         runtime""".replace('\n' + ' '*8, '\t')
     lables = 'log\t'+logger_str1
     log_str = ''.join(['\t{', logger_str1.replace('\t', '}\t{'), '}']).format(**info)
 
-    #LOG.info(lables)
+    # LOG.info(lables)
     LOG.info(log_str)
-
-    #logger_str = """log script host cores_used processes_running i time pi""".replace(' ', '\t')
-    #LOG.info(logger_str)
