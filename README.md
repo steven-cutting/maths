@@ -24,6 +24,7 @@ demonstrate various features in python.
 >>> maths.para_wallis(i, cores)
 3.141592643066262
 ```
-[Some logs that show performance stats.](https://github.com/steven-cutting/maths/tree/stable/data/logs)
+
+   [Some logs that show performance stats.](https://github.com/steven-cutting/maths/tree/stable/data/logs)
 
 
