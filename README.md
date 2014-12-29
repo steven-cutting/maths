@@ -4,7 +4,7 @@ This is just a module for 'toy problems'.
 I using different mathematical formulas/equations/etc. to practice and
 demonstrate various features in python.
 
-[**The Wallis Equationn**](http://www.pi314.net/eng/wallis.php)
+[**The Wallis Equation**](http://www.pi314.net/eng/wallis.php)
    Used to approximate pi as closely as you like. i -> ∞ | wallis -> π
 +  I have written a version that can take advantage of all of the cores of the
    machine that it is running on.
