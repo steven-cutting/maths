@@ -10,5 +10,4 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 
 
 from .pie import wallis_equation, genmill, wallis, wallisgen, wallis_parallel
-from .pie import wallisold, wallis2, wallis3, wallis4, wallis5
 from parallel import para_wallis
