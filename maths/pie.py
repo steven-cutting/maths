@@ -1,9 +1,20 @@
 from __future__ import division
+__title__ = 'maths'
+__license__ = 'MIT'
+__author__ = 'Steven Cutting'
+__author_email__ = 'steven.c.projects@gmail.com'
+__created_on__ = '12/3/2014'
+
+#from __future__ import division
 import math
 import cmath
 import sys
 from decimal import Decimal
 from itertools import islice, count, izip, imap, product, chain
+
+
+import logging
+_LOG = logging.getLogger(__name__)
 
 # The basic equation:
 # pi = ((4 * (i**2))/((4 * (i**2)) - 1)) * pi
@@ -17,9 +28,8 @@ from itertools import islice, count, izip, imap, product, chain
 # d = b / c
 # pi = d * pi
 
-
 def wallis_equation(i):
-    # This replaces this: ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0)) * pie
+    # This replaces this: ((4.0*(i**2.0))/((4.0*(i**2.0))-1.0))
     # Reduces redundant operations.
     a = i**2
     b = 4*a
@@ -27,19 +37,36 @@ def wallis_equation(i):
     return b / c
 
 
-def genmill(stop, start=0):
-    # exclusive
-    end = stop - start
-    return islice(count(start), 0, end)
-
-
-def wallis(stop, start=0, pie=1):
+def wallis(stop, start=1, pie=1, step=1):
     pi = pie
-    end = stop - start
-    for v in imap(wallis_equation, islice(count(start + 1), 0, end)):
+    end = stop - start + 1
+    iteration = 0
+    try:
+        for i,v in enumerate(imap(wallis_equation, islice(count(start), 0, end, step))):
+            p = pi
+            pi = v * p
+            iteration = i
+    except KeyboardInterrupt:
+        return pi * 2, iteration
+    return pi * 2, iteration + 1
+
+
+
+
+def wallis_parallel(kwargs):
+    stop = kwargs['stop']
+    start = kwargs['start']
+    step = kwargs['step']
+
+    pi = 1
+    end = stop - start + 1
+    iteration = 0
+    for i,v in enumerate(imap(wallis_equation, islice(count(start), 0, end, step))):
         p = pi
         pi = v * p
-    return pi * 2
+    return pi
+
+
 
 
 def wallisgen(stop, start=0, pie=1):
@@ -54,7 +81,10 @@ def wallisgen(stop, start=0, pie=1):
 # If I split up large values of i into multiple iterables use chain() form itertools.
 
 
-
+def genmill(stop, start=0):
+    # exclusive
+    end = stop - start
+    return islice(count(start), 0, end)
 
 
 # ------------------------------------------------------------------------------
